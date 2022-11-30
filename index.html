@@ -5,14 +5,62 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100;400;700&display=swap" rel="stylesheet">
     <style>
       body {
         background-color: #0c0c91;
-        font-family: Montserrat, sans-serif;
-        background-image: url(bg.png);
-        background-repeat: no-repeat;
-        background-size: 100%;
+        font-family: 'Sora';
+        color: #ffffff;
       }
+
+      h1 {
+        font-size: 8rem;
+        font-weight: bold;
+        margin: 0;
+        padding: 0;
+      }
+
+      h2 {
+        font-size: 4rem;
+        font-weight: bold;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+      }
+
+      .logo-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 4em;
+      }
+
+      .logo-container h2 {
+        padding: 2em;
+      }
+
+      .word-container {
+        margin-top: 12rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .word-section {
+        margin-top: 4rem;
+      }
+
+      .logo {
+        width: 400px;
+      }
+
       .welcome {
         color: #fff;
         text-align: center;
@@ -23,16 +71,49 @@
         font-size: 50px;
         z-index: 99;
       }
+
+      .welcome-title {
+        color: #0fe273;
+        font-size: 8rem;
+        font-weight: bold;
+        margin: 0;
+        padding: 0;
+      }
+
     </style>
   </head>
   <body>
     <script src="confetti.js"></script>
-
-    <div class="words"></div>
-      
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+    <div class="container">
+      <div class="logo-container">
+        <img class="logo" src="1337_logo.svg" alt="1337 logo">
+        <h2 id="values"></h2>
+      </div>
+  
+      <div class="word-container">
+        <div>
+          <div class="words-section">
+            <h1 class="welcome-title">Welcome to</h1>
+            <h2>Knowledge afterwork</h2>
+          </div>
+          <div class="word-section">
+            <h2>With</h2>
+            <h1>Helen Toomik</h1>
+          </div>
+        </div>
+      </div>
+    </div>
     <script>
       startConfetti();
 
+      var values = document.getElementById('values');
+
+      var typewriter = new Typewriter(values, {
+        loop: true,
+        autoStart: true,
+        strings: ['Go Beyond', 'Be Genuine', 'Embrace Difference', 'Challange Now', 'Enjoy The Ride', 'Weve got this. Together.']
+      });
     </script>
   </body>
 </html>
