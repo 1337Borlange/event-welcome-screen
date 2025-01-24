@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@100;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background-color: #0c0c91;
+        font-family: "Sora";
+        color: #ffffff;
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+        width: 100%;
+        letter-spacing: 0.4em;
+      }
+
+      h1 {
+        font-size: 8rem;
+        font-weight: bold;
+        margin: 0;
+        padding: 0;
+      }
+
+      h2 {
+        font-size: 4rem;
+        font-weight: bold;
+        margin: 0;
+        padding: 0;
+      }
+
+      h3 {
+        font-size: 3rem;
+        font-weight: bold;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        transform: rotate(-90deg);
+      }
+
+      #confetti-canvas {
+        transform: rotate(-90deg);
+        transform-origin: top left;
+        position: absolute;
+        bottom: -100vw;
+        height: 100vw;
+        width: 100vh;
+      }
+
+      .logo-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 4em;
+      }
+
+      .logo-container h2 {
+        padding: 2em;
+      }
+
+      .word-container {
+        margin-top: 12rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .word-section {
+        margin-top: 4rem;
+      }
+
+      .logo {
+        width: 400px;
+      }
+
+      .welcome-title {
+        color: #0fe273;
+        font-size: 8rem;
+        font-weight: bold;
+        margin: 0;
+        padding: 0;
+      }
+
+      .fat-text {
+        font-size: 3rem;
+      }
+
+      .thin-text {
+        font-size: 1rem;
+      }
+
+      /* #ludek img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        position: relative;
+        width: 300px;
+        height: 300px;
+        overflow: hidden;
+        animation-name: ludek-fly;
+        animation-duration: 20s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        transition: all 1s ease-in-out;
+        position: absolute;
+      }
+
+      #ludek {
+        position: absolute;
+        top: 800px;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 99;
+        overflow: hidden;
+      }
+
+      @keyframes ludek-fly {
+        0% {
+          transform: translate(100vw, 0) scaleX(1);
+        }
+        40% {
+          transform: translate(-300px, 0);
+        }
+        50% {
+          transform: translate(-300px, 0);
+        }
+        50% {
+          transform: translate(-300px, 0) scaleX(-1);
+        }
+        90% {
+          transform: translate(100vw, 0) scaleX(-1);
+        }
+        100% {
+          transform: translate(100vw, 0) scaleX(-1);
+        }
+      } */
+    </style>
+  </head>
+  <body>
+    <script src="confetti.js"></script>
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+    <div class="container">
+      <div class="logo-container">
+        <img class="logo" src="1337_logo.svg" alt="1337 logo" />
+        <h2 id="values"></h2>
+      </div>
+
+      <div class="word-container">
+        <div>
+          <div class="words-section">
+            <h1 class="welcome-title">Welcome to</h1>
+            <h2>Leet talks: Borlänge</h2>
+          </div>
+          <div class="word-section">
+            <h2>With</h2>
+            <span class="fat-text"> Johan Damm </span>
+            <span class="thin-text"> and </span>
+            <span class="fat-text"> Martin Friman </span>
+          </div>
+        </div>
+      </div>
+      <!-- <div id="ludek"><img src="ludek.png" id="ludek-img" alt="" /></div> -->
+    </div>
+    <!-- <script>
+      const ludek = document.getElementById("ludek-img");
+
+      let down = true;
+      setInterval(() => {
+        if (down) {
+          down = false;
+          ludek.style.top = "0px";
+        } else {
+          down = true;
+          ludek.style.top = Math.random() * 100 + 50 + "px";
+        }
+      }, 1000);
+    </script> -->
+    <script>
+      startConfetti();
+
+      var values = document.getElementById("values");
+
+      var typewriter = new Typewriter(values, {
+        loop: true,
+        autoStart: true,
+        strings: [
+          "Go Beyond",
+          "Be Genuine",
+          "Embrace Difference",
+          "Challenge Now",
+          "Enjoy The Ride",
+          "We`ve got this. Together.",
+        ],
+      });
+    </script>
+  </body>
+</html>
